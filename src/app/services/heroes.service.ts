@@ -90,7 +90,6 @@ export class HeroesServices{
         }
       }
       return heroeArr;
-
     }
 }
 export interface Heroe{

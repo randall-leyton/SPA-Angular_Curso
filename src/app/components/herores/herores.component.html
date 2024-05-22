@@ -2,14 +2,8 @@
 </div>
 
 <div class="card-columns">
-  <div class="card animated fadeIn fast" *ngFor="let item of heroes">
-    <img [src]="item.img" class="card-img-top" [alt]="item.nombre">
-    <div class="card-body">
-      <h5 class="card-title">{{item.nombre}}</h5>
-      <p class="card-text">{{item.bio}}</p>
-      <p class="card-text">ultima aparicion : {{item.aparicion}} </p>
-      <button class="btn btn-outline-primary btn-block "  (click)="verHeroe(item.id)">ver mas...</button>
-      <!-- <a [routerLink]="['/heroe', item.id]"  class="btn btn-outline-primary btn-block " > ver mas...</a> -->
-    </div>
+  <!--<div class="card animated fadeIn fast" *ngFor="let item of heroes">-->
+    <app-heroe-tarjeta (heroeSeleccionado)="verHeroe($event)" [heroe]="elFor" [index]="elFor.id" *ngFor="let elFor of heroes" ></app-heroe-tarjeta>
+    <!--el dato que se manda va antes que el for , el nombre que va entre las llaves es la variable enel componente hijo y elotro valor es el dato a mandar-->
+    
   </div>
-</div>
